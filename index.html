@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover gadgets and tech accessories at GadgetGalaxy Bangladesh.">
+  <title>GadgetGalaxy | Gadgets & Tech Accessories</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0c1224;
+      color: #f5f7ff;
+    }
+
+    header {
+      padding: 22px 6%;
+      background: #121c34;
+      border-bottom: 1px solid #293650;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #62e8df;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 65px 6%;
+      text-align: center;
+      background: linear-gradient(135deg, #172b49, #25204a);
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      margin: 0 0 15px;
+    }
+
+    .hero h1 span { color: #62e8df; }
+
+    .hero p {
+      color: #c4cde0;
+      font-size: 17px;
+    }
+
+    .products-section {
+      padding: 40px 6% 60px;
+    }
+
+    .products-section h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      background: #151f36;
+      border: 1px solid #293650;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      background: #202b43;
+      padding: 12px;
+    }
+
+    .image-placeholder {
+      height: 220px;
+      display: grid;
+      place-items: center;
+      background: #202b43;
+      font-size: 65px;
+    }
+
+    .product-info { padding: 18px; }
+
+    .category {
+      color: #62e8df;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .product-info h3 { margin: 9px 0; }
+
+    .description {
+      color: #c4cde0;
+      min-height: 42px;
+      line-height: 1.5;
+    }
+
+    .price {
+      font-size: 19px;
+      font-weight: bold;
+      margin: 16px 0;
+    }
+
+    .order-button {
+      display: block;
+      background: #62e8df;
+      color: #10182a;
+      text-decoration: none;
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .contact {
+      padding: 35px 6%;
+      text-align: center;
+      background: #121c34;
+    }
+
+    .contact p { color: #c4cde0; }
+
+    footer {
+      text-align: center;
+      padding: 22px;
+      color: #aeb9d0;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">✦ GadgetGalaxy</div>
+    <a href="#products">Browse Products ↓</a>
+  </header>
+
+  <section class="hero">
+    <h1>Your Galaxy of <span>Smart Gadgets</span></h1>
+    <p>Discover useful gadgets and tech accessories for everyday life.</p>
+  </section>
+
+  <main class="products-section" id="products">
+    <h2>Our Products</h2>
+    <div class="product-grid" id="productGrid">
+      Loading products...
+    </div>
+  </main>
+
+  <section class="contact">
+    <h2>Looking for a gadget?</h2>
+    <p>Contact GadgetGalaxy to ask about products, prices and availability.</p>
+    <a class="order-button" id="contactButton" href="#products">
+      Browse our products
+    </a>
+  </section>
+
+  <footer>
+    © <span id="year"></span> GadgetGalaxy. All rights reserved.
+  </footer>
+
+  <script src="products.js"></script>
+  <script>
+    // Add your Facebook Page URL here later.
+    const FACEBOOK_PAGE = "";
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const grid = document.getElementById("productGrid");
+
+    grid.innerHTML = products
+      .filter(product => product.name.trim() !== "")
+      .map(product => {
+        const productName = product.brand
+          ? product.brand + " " + product.name
+          : product.name;
+
+        const image = product.image
+          ? `<img class="product-image"
+               src="${product.image}"
+               alt="${productName.replace(/&/g, "&amp;").replace(/"/g, "&quot;")}"
+               onerror="this.outerHTML='<div class=&quot;image-placeholder&quot;>📦</div>'">`
+          : `<div class="image-placeholder">📦</div>`;
+
+        const price = product.price !== ""
+          ? "৳" + product.price
+          : "Message for price";
+
+        const message = encodeURIComponent(
+          "Hello GadgetGalaxy! I am interested in " + productName
+        );
+
+        const orderLink = FACEBOOK_PAGE
+          ? "https://m.me/" + FACEBOOK_PAGE.replace(/\/$/, "").split("/").pop()
+          : "#contact";
+
+        return `
+          <article class="product-card">
+            ${image}
+            <div class="product-info">
+              <div class="category">${product.category || "Gadget"}</div>
+              <h3>${productName}</h3>
+              <p class="description">${product.description || ""}</p>
+              <div class="price">${price}</div>
+              <a class="order-button"
+                 href="${orderLink}"
+                 ${FACEBOOK_PAGE ? 'target="_blank" rel="noopener"' : ""}
+                 aria-label="Ask about ${productName}">
+                Ask about this product
+              </a>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+    document.getElementById("contactButton").href =
+      FACEBOOK_PAGE
+        ? "https://m.me/" + FACEBOOK_PAGE.replace(/\/$/, "").split("/").pop()
+        : "#products";
+  </script>
+</body>
+</html>
