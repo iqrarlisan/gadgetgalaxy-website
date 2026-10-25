@@ -4,7 +4,7 @@ const products = [
     brand: "HAVIT",
     name: "ST7164 Mobile Phone Stand",
     price: "",
-    image: "havit-st7164.jpg",
+    image: "havit 1.jfif",
     category: "Mobile Accessories",
     description: "A practical phone stand for your desk and everyday use."
   },
