@@ -246,10 +246,14 @@ const WHATSAPP_NUMBER = "8801684240084";
         `;
       }).join("");
 
-    document.getElementById("contactButton").href =
-      FACEBOOK_PAGE
-        ? "https://m.me/" + FACEBOOK_PAGE.replace(/\/$/, "").split("/").pop()
-        : "#products";
+   document.getElementById("contactButton").href =
+  "https://wa.me/" + WHATSAPP_NUMBER;
+
+document.getElementById("contactButton").textContent =
+  "Chat with us on WhatsApp";
+
+document.getElementById("contactButton").target = "_blank";
+document.getElementById("contactButton").rel = "noopener";
   </script>
 </body>
 </html>
