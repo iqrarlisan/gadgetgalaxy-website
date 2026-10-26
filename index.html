@@ -223,9 +223,8 @@ const WHATSAPP_NUMBER = "8801684240084";
           "Hello GadgetGalaxy! I am interested in " + productName
         );
 
-        const orderLink = FACEBOOK_PAGE
-          ? "https://m.me/" + FACEBOOK_PAGE.replace(/\/$/, "").split("/").pop()
-          : "#contact";
+        const orderLink =
+  "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + message;
 
         return `
           <article class="product-card">
