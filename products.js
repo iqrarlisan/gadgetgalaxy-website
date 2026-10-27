@@ -44,5 +44,44 @@ const products = [
     category: "Audio",
     description:
       "Compact wireless earbuds for music and everyday listening, supplied with a convenient charging case."
+  },
+  
+  {
+    brand: "UGREEN",
+    name: "USB Male to Type-C Data Cable (0.25m, Black)",
+    price: "270",
+    image: "UGREEN cable.jpg",
+    category: "Cables & Adapters",
+    description:
+      "A compact 0.25-meter USB-to-Type-C cable for everyday charging and data transfer."
+  },
+  {
+    brand: "HOCO",
+    name: "UA17 Type-C to USB Adapter",
+    price: "240",
+    image: "Hoco UA17.jpg",
+    category: "Cables & Adapters",
+    description:
+      "A handy Type-C to USB adapter for connecting compatible USB devices to a Type-C port."
   }
+
+  {
+    brand: "UGREEN",
+    name: "USB Male to Type-C Data Cable (0.25m, Black)",
+    price: "270",
+    image: "UGREEN cable.jpg",
+    category: "Cables & Adapters",
+    description:
+      "A compact 0.25-meter USB-to-Type-C cable for everyday charging and data transfer."
+  },
+  {
+    brand: "HOCO",
+    name: "UA17 Type-C to USB Adapter",
+    price: "240",
+    image: "Hoco UA17.jpg",
+    category: "Cables & Adapters",
+    description:
+      "A handy Type-C to USB adapter for connecting compatible USB devices to a Type-C port."
+  }
+
 ];
