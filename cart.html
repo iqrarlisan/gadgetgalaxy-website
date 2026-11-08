@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shopping Cart | GadgetGalaxy</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0c1224;
+      color: #f5f7ff;
+    }
+
+    header {
+      background: #121c34;
+      padding: 15px 20px;
+      text-align: center;
+      border-bottom: 1px solid #293650;
+    }
+
+    header img {
+      max-width: 160px;
+      height: auto;
+    }
+
+    .page-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #62e8df;
+      margin-bottom: 25px;
+    }
+
+    .cart-container {
+      background: #151f36;
+      border: 1px solid #293650;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid #293650;
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 8px;
+    }
+
+    .item-info h3 {
+      margin: 0 0 8px;
+    }
+
+    .item-price {
+      color: #62e8df;
+      font-weight: bold;
+    }
+
+    .item-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .item-controls button {
+      background: #293650;
+      color: #62e8df;
+      border: 1px solid #62e8df;
+      border-radius: 5px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .item-controls span {
+      min-width: 25px;
+      text-align: center;
+    }
+
+    .remove-button {
+      background: transparent;
+      border: none;
+      color: #ff8585;
+      cursor: pointer;
+      margin-top: 10px;
+      padding: 0;
+    }
+
+    .cart-summary {
+      max-width: 350px;
+      margin: 25px 0 0 auto;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 12px 0;
+    }
+
+    .total-row {
+      border-top: 1px solid #293650;
+      padding-top: 15px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .cart-button {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      margin-top: 15px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .checkout-button {
+      background: #62e8df;
+      color: #10182a;
+      border: none;
+    }
+
+    .continue-button {
+      background: transparent;
+      color: #62e8df;
+      border: 1px solid #62e8df;
+    }
+
+    .empty-cart {
+      text-align: center;
+      padding: 40px 15px;
+    }
+
+    .empty-cart p {
+      color: #c3cce0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #aab5cc;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .page-container {
+        margin: 20px auto;
+        padding: 12px;
+      }
+
+      .cart-container {
+        padding: 15px;
+      }
+
+      .cart-item {
+        grid-template-columns: 75px 1fr;
+        gap: 12px;
+      }
+
+      .cart-item img {
+        width: 75px;
+        height: 75px;
+      }
+
+      .item-actions {
+        grid-column: 2;
+      }
+
+      .cart-summary {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="GadgetGalaxy Cosmic Neon Logo.png"
+           alt="GadgetGalaxy Logo">
+    </a>
+  </header>
+
+  <main class="page-container">
+
+    <h1>Your Shopping Cart</h1>
+
+    <div class="cart-container" id="cartContainer">
+
+      <!-- Cart items will appear here -->
+
+    </div>
+
+  </main>
+
+  <footer>
+    © <span id="currentYear"></span> GadgetGalaxy. All rights reserved.
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+
+</body>
+</html>

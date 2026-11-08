@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Checkout | GadgetGalaxy</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0c1224;
+      color: #f5f7ff;
+    }
+
+    header {
+      background: #121c34;
+      padding: 15px 20px;
+      text-align: center;
+      border-bottom: 1px solid #293650;
+    }
+
+    header img {
+      max-width: 160px;
+      height: auto;
+    }
+
+    .page-container {
+      max-width: 1000px;
+      margin: 35px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #62e8df;
+      margin-bottom: 25px;
+    }
+
+    .checkout-layout {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .checkout-section {
+      background: #151f36;
+      border: 1px solid #293650;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #62e8df;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #354563;
+      border-radius: 7px;
+      background: #0c1224;
+      color: #ffffff;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #62e8df;
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 15px;
+      border: 1px solid #354563;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+
+    .payment-option input {
+      margin-top: 4px;
+      accent-color: #62e8df;
+    }
+
+    .payment-option strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .payment-option small {
+      color: #b9c5dc;
+      line-height: 1.5;
+    }
+
+    .order-summary {
+      background: #151f36;
+      border: 1px solid #293650;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0;
+      gap: 15px;
+    }
+
+    .total-row {
+      border-top: 1px solid #354563;
+      padding-top: 18px;
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .place-order-button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 15px;
+      background: #62e8df;
+      color: #10182a;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .place-order-button:hover {
+      background: #42d6cc;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #62e8df;
+      text-decoration: none;
+    }
+
+    .notice {
+      color: #b9c5dc;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-top: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #aab5cc;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .page-container {
+        margin: 20px auto;
+        padding: 12px;
+      }
+
+      .checkout-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .checkout-section,
+      .order-summary {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="GadgetGalaxy Cosmic Neon Logo.png"
+           alt="GadgetGalaxy Logo">
+    </a>
+  </header>
+
+  <main class="page-container">
+
+    <a href="cart.html" class="back-link">
+      ← Back to Cart
+    </a>
+
+    <h1>Checkout</h1>
+
+    <div class="checkout-layout">
+
+      <div>
+
+        <form id="checkoutForm">
+
+          <section class="checkout-section">
+
+            <h2>Customer Information</h2>
+
+            <div class="form-group">
+              <label for="customerName">Full Name *</label>
+              <input
+                type="text"
+                id="customerName"
+                name="customerName"
+                required
+                placeholder="Enter your full name"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                placeholder="01XXXXXXXXX"
+                pattern="01[0-9]{9}"
+                title="Enter a valid Bangladeshi mobile number"
+              >
+            </div>
+
+          </section>
+
+          <section class="checkout-section">
+
+            <h2>Delivery Address</h2>
+
+            <div class="form-group">
+              <label for="area">Delivery Area *</label>
+              <input
+                type="text"
+                id="area"
+                name="area"
+                required
+                placeholder="Enter your Dhaka area"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="address">Full Address *</label>
+              <textarea
+                id="address"
+                name="address"
+                required
+                placeholder="House number, road, block, apartment, etc."
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="landmark">Nearby Landmark (Optional)</label>
+              <input
+                type="text"
+                id="landmark"
+                name="landmark"
+                placeholder="Nearby school, mosque, building, etc."
+              >
+            </div>
+
+          </section>
+
+          <section class="checkout-section">
+
+            <h2>Payment Method</h2>
+
+            <label class="payment-option">
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="Cash on Delivery"
+                required
+                checked
+              >
+
+              <span>
+                <strong>Cash on Delivery</strong>
+                <small>Pay when your order is delivered.</small>
+              </span>
+            </label>
+
+            <label class="payment-option">
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="bKash"
+              >
+
+              <span>
+                <strong>bKash</strong>
+                <small>Manual payment through bKash.</small>
+              </span>
+            </label>
+
+            <label class="payment-option">
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="Nagad"
+              >
+
+              <span>
+                <strong>Nagad</strong>
+                <small>Manual payment through Nagad.</small>
+              </span>
+            </label>
+
+            <div id="paymentInstructions" class="notice">
+  You can pay in cash when your order is delivered.
+</div>
+
+          </section>
+
+          <button
+            type="submit"
+            class="place-order-button"
+          >
+            Place Order
+          </button>
+
+        </form>
+
+      </div>
+
+      <aside class="order-summary">
+
+        <h2>Your Order</h2>
+
+        <div id="checkoutItems">
+          <!-- Order items will appear here -->
+        </div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="checkoutSubtotal">৳0</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Delivery</span>
+          <span>Calculated later</span>
+        </div>
+
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <strong id="checkoutTotal">৳0</strong>
+        </div>
+
+        <p class="notice">
+          Delivery charges will be confirmed based on your address
+          before the order is finalized.
+        </p>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer>
+    © <span id="currentYear"></span> GadgetGalaxy. All rights reserved.
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="checkout.js"></script>
+
+</body>
+</html>
