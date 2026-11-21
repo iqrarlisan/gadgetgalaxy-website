@@ -5,9 +5,10 @@ const products = [
     name: "ST7164 Mobile Phone Stand",
     price: "",
     image: "havit 1.jfif",
-    category: "Mobile Accessories",
+        category: "Mobile Accessories",
     description: "A practical phone stand for your desk and everyday use.",
-    specifications: []
+    specifications: [],
+    syncFields: ["brand", "name", "price"]
   },
   {
     id: "oneplus-bullets-z2-anc",
@@ -20,7 +21,8 @@ const products = [
     specifications: [
       "Product type: Wireless neckband",
       "Noise cancellation: ANC"
-    ]
+    ],
+    syncFields: ["brand", "name", "price"]
   },
   {
     id: "awei-pa92",
@@ -33,7 +35,8 @@ const products = [
     specifications: [
       "Capacity: 20000mAh",
       "Charging power: 22.5W"
-    ]
+    ],
+    syncFields: ["brand", "name", "price"]
   },
   {
     id: "foneng-px106",
@@ -47,7 +50,8 @@ const products = [
       "Capacity: 10000mAh",
       "Charging power: 22.5W",
       "Built-in cables: Type-C and iP"
-    ]
+    ],
+    syncFields: ["brand", "name", "price"]
   },
   {
     id: "hoco-eq2",
@@ -60,7 +64,8 @@ const products = [
     specifications: [
       "Product type: Wireless earbuds",
       "Charging case: Included"
-    ]
+    ],
+    syncFields: ["brand", "name", "price"]
   },
   {
     id: "ugreen-usb-typec-cable",
@@ -74,7 +79,8 @@ const products = [
       "Length: 0.25 metre",
       "Connectors: USB-A to Type-C",
       "Colour: Black"
-    ]
+    ],
+    syncFields: ["brand", "name", "price"]
   },
   {
     id: "hoco-ua17",
@@ -86,7 +92,8 @@ const products = [
     description: "A handy adapter for connecting compatible USB devices to a Type-C port.",
     specifications: [
       "Connection: Type-C to USB"
-    ]
+    ],
+    syncFields: ["brand", "name", "price"]
   }
 ];
 // Allow GitHub Actions to read the catalogue
