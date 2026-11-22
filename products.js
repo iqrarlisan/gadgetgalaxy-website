@@ -8,8 +8,15 @@ const products = [
         category: "Mobile Accessories",
     description: "A practical phone stand for your desk and everyday use.",
     specifications: [],
-    syncFields: ["brand", "name", "price"]
-  },
+syncFields: [
+  "brand",
+  "name",
+  "price",
+  "category",
+  "description",
+  "specifications",
+  "image"
+]  },
   {
     id: "oneplus-bullets-z2-anc",
     brand: "OnePlus",
@@ -22,8 +29,15 @@ const products = [
       "Product type: Wireless neckband",
       "Noise cancellation: ANC"
     ],
-    syncFields: ["brand", "name", "price"]
-  },
+syncFields: [
+  "brand",
+  "name",
+  "price",
+  "category",
+  "description",
+  "specifications",
+  "image"
+]  },
   {
     id: "awei-pa92",
     brand: "Awei",
@@ -36,8 +50,15 @@ const products = [
       "Capacity: 20000mAh",
       "Charging power: 22.5W"
     ],
-    syncFields: ["brand", "name", "price"]
-  },
+syncFields: [
+  "brand",
+  "name",
+  "price",
+  "category",
+  "description",
+  "specifications",
+  "image"
+]  },
   {
     id: "foneng-px106",
     brand: "Foneng",
@@ -51,8 +72,15 @@ const products = [
       "Charging power: 22.5W",
       "Built-in cables: Type-C and iP"
     ],
-    syncFields: ["brand", "name", "price"]
-  },
+syncFields: [
+  "brand",
+  "name",
+  "price",
+  "category",
+  "description",
+  "specifications",
+  "image"
+]  },
   {
     id: "hoco-eq2",
     brand: "Hoco",
@@ -65,8 +93,15 @@ const products = [
       "Product type: Wireless earbuds",
       "Charging case: Included"
     ],
-    syncFields: ["brand", "name", "price"]
-  },
+syncFields: [
+  "brand",
+  "name",
+  "price",
+  "category",
+  "description",
+  "specifications",
+  "image"
+]  },
   {
     id: "ugreen-usb-typec-cable",
     brand: "UGREEN",
@@ -80,7 +115,15 @@ const products = [
       "Connectors: USB-A to Type-C",
       "Colour: Black"
     ],
-    syncFields: ["brand", "name", "price"]
+    syncFields: [
+  "brand",
+  "name",
+  "price",
+  "category",
+  "description",
+  "specifications",
+  "image"
+]
   },
   {
     id: "hoco-ua17",
@@ -93,7 +136,15 @@ const products = [
     specifications: [
       "Connection: Type-C to USB"
     ],
-    syncFields: ["brand", "name", "price"]
+    syncFields: [
+  "brand",
+  "name",
+  "price",
+  "category",
+  "description",
+  "specifications",
+  "image"
+]
   }
 ];
 // Allow GitHub Actions to read the catalogue
